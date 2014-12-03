@@ -1,6 +1,6 @@
 
 module.exports = function ( karma ) {
-  process.env.PHANTOMJS_BIN = 'node_modules/karma-phantomjs-launcher/node_modules/.bin/phantomjs';
+  // process.env.PHANTOMJS_BIN = 'node_modules/karma-phantomjs-launcher/node_modules/.bin/phantomjs';
 
   karma.set({
     /**
