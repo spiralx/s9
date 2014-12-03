@@ -1,14 +1,17 @@
 
-@import url("http://fonts.googleapis.com/css?family=Noto+Sans")
-
 
 $text-colour = black
 $page-colour = #fcfcfc
 
+$text-size = 16px
+$text-font = "Noto Sans", Verdana, sans-serif
+
 
 body
   padding 0 50px
-  font 16px/150% "Noto Sans", "Lucida Grande", Verdana, sans-serif
+  // font-size $text-size
+  font-family $text-font
+  line-height: 1.5em
   color $text-colour
   background $page-colour
 

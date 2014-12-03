@@ -1,39 +1,60 @@
 
+
 DataCtrl = ($scope) ->
   'use strict'
 
   $scope.seriesConfig =
-    caption: 'Enter data below'
-    columns: [
-      'Series One'
-      'Series Two'
-    ]
+    caption: 'Widget Data'
 
   $scope.seriesData = [
-    [ 1, 2 ]
-    [ 3, 4 ]
+    {
+      name: 'Items'
+      data: [ 160, 21, 309 ]
+      draggableY: true
+    }
+    {
+      name: 'Orders'
+      data: [ 13, 40, 106 ]
+    }
   ]
+
+  $scope.chartConfig =
+    options:
+      chart:
+        type: 'column'
+
+      plotOptions:
+        series:
+          cursor: 'ns-resize'
+          stickyTracking: false
+          dragMinY: 0
+
+          point:
+            events:
+              drop: (ev) ->
+                $scope.seriesData[this.series.index].data[this.index] = Math.round(this.y)
+                $scope.$apply()
+
+        column:
+          stacking: ''
+
+      tooltip:
+        yDecimals: 0
+
+    series: $scope.seriesData
+
+    xAxis:
+      currentMin: 0
+
+    title:
+      text: $scope.seriesConfig.caption
+
 
 DataCtrl.$inject = [ '$scope' ]
 
 
+# -------------------------------------------------------------
+
 angular
-  .module 'a.data'
+  .module 's9.data'
   .controller 'DataCtrl', DataCtrl
-
-    # $scope.todos = JSON.parse($window.localStorage.getItem('todos') or '[]')
-    # $scope.$watch('todos', (newTodos, oldTodos) ->
-    #   if (newTodos != oldTodos)
-    #     $window.localStorage.setItem 'todos', JSON.stringify(angular.copy($scope.todos))
-    # , true)
-
-    # $scope.add = ->
-    #   todo =
-    #     label: $scope.label
-    #     isDone: false
-    #   $scope.todos.push(todo)
-    #   $window.localStorage.setItem 'todos', JSON.stringify(angular.copy($scope.todos))
-    #   $scope.label = ''
-
-    # $scope.check = ->
-    #   @todo.isDone = not @todo.isDone

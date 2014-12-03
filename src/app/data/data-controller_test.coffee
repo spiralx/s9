@@ -1,5 +1,5 @@
-describe 'TodoCtrl', ->
-  todoCtrl = null
+describe 'DataCtrl', ->
+  dataCtrl = null
   scope = null
 
   beforeEach module('a')
@@ -7,11 +7,11 @@ describe 'TodoCtrl', ->
   beforeEach inject ($injector) ->
     scope = $injector.get('$rootScope')
 
-    todoCtrl = ->
-      $injector.get('$controller')('TodoCtrl', $scope:scope)
+    dataCtrl = ->
+      $injector.get('$controller')('DataCtrl', $scope:scope)
 
   it 'should add new todos on add()', ->
-    todo = 
+    todo =
       label: 'A new todo'
       isDone: false
     todoCtrl()

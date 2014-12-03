@@ -1,0 +1,37 @@
+<div class="panel panel-primary dataseries">
+  <div class="panel-heading" ng-show="config.caption">
+    {{config.caption}}
+  </div>
+
+  <div class="panel-body">
+    <form class="form-horizontal" role="form">
+      <div class="form-group header-row">
+        <label class="col-sm-2 control-label">#</label>
+        <label class="col-sm-4 control-label text-left">
+          {{data[0].name}}
+        </label>
+        <label class="col-sm-4 control-label text-left">
+          {{data[1].name}}
+        </label>
+      </div>
+
+      <div class="form-group" ng-repeat="item in data[0].data track by $index">
+        <label class="col-sm-2 control-label">{{$index + 1}}</label>
+        <div class="col-sm-4">
+          <input type="number" min="0" class="form-control" ng-model="data[0].data[$index]">
+        </div>
+        <div class="col-sm-4">
+          <input type="number" min="0" class="form-control" ng-model="data[1].data[$index]">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="button" class="btn btn-info" ng-click="addRow()">
+            <i class="glyphicon glyphicon-plus-sign" aria-hidden="true"></i> Add item
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

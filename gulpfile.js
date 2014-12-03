@@ -27,7 +27,8 @@ var htmlminOpts = {
 gulp.task('jshint', function () {
   return gulp.src([
     './gulpfile.js',
-    './src/app/**/*.js'
+    './src/app/**/*.js',
+    '!./src/app/assets/**/*.js'
   ])
     .pipe(g.cached('jshint'))
     .pipe(jshint('./.jshintrc'))
@@ -70,7 +71,12 @@ gulp.task('coffee', function () {
   return gulp.src([
     './src/app/**/*.coffee'
   ])
+    .pipe(g.sourcemaps.init())
     .pipe(g.coffee())
+    .pipe(g.sourcemaps.write({
+      includeContent: false,
+      sourceRooot: './src/app'
+    }))
     .pipe(gulp.dest('./.tmp/src/app'));
 });
 

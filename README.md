@@ -1,7 +1,18 @@
-a
-============
+## sticky9/photobox test
 
-## Development
+
+### Installation
+
+After downloading or cloning this project, install the required libraries with
+
+```bash
+cd s9
+npm install
+bower install
+```
+
+
+### Development
 
 To start developing in the project run:
 
@@ -13,7 +24,8 @@ Then head to `http://localhost:3000` in your browser.
 
 The `serve` tasks starts a static file server, which serves the AngularJS application, and a watch task which watches all files for changes and lints, builds and injects them into the index.html accordingly.
 
-## Tests
+
+### Tests
 
 To run tests run:
 
@@ -33,7 +45,8 @@ Then you're able to run Karma directly. Example:
 karma start --single-run
 ```
 
-## Production ready build - a.k.a. dist
+
+### Production ready build - a.k.a. dist
 
 To make the app ready for deploy to production run:
 

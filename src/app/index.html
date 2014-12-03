@@ -2,32 +2,38 @@
 <html ng-app="a">
   <head>
     <meta charset="utf-8"/>
-    <title>a</title>
+    <title>sticky9/photobox test</title>
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Noto+Sans'>
     <!-- inject:vendor:css -->
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
     <!-- endinject -->
     <!-- inject:css -->
     <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/data/data-series.css">
     <link rel="stylesheet" href="/css/data/data.css">
+    <link rel="stylesheet" href="/css/dataseries/dataseries.css">
     <!-- endinject -->
   </head>
   <body>
     <div class="page-header">
-      <h1>a</h1>
+      <h1>sticky9/photobox test</h1>
     </div>
 
     <ng-view></ng-view>
+
     <!-- inject:vendor:js -->
     <script src="/angular/angular.js"></script>
     <script src="/angular-route/angular-route.js"></script>
     <script src="/jquery/dist/jquery.js"></script>
+    <script src="/highcharts-ng/dist/highcharts-ng.js"></script>
     <script src="/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endinject -->
     <!-- inject:js -->
+    <script src="/assets/highcharts.src.js"></script>
+    <script src="/assets/draggable-points.js"></script>
     <script src="/data/data.js"></script>
-    <script src="/data/data-series.js"></script>
     <script src="/data/data-controller.js"></script>
+    <script src="/dataseries/dataseries.js"></script>
     <script src="/app.js"></script>
     <script src="/a-templates.js"></script>
     <!-- endinject -->

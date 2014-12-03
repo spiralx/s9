@@ -1,13 +1,13 @@
 {
-  "name": "a",
+  "name": "s9",
   "main": [
-    "/dist/a.min.js",
-    "/dist/a.min.css"
+    "/dist/s9.min.js",
+    "/dist/s9.min.css"
   ],
   "version": "0.1.0",
-  "description": "TODO",
+  "description": "sticky9/photobox test",
   "authors": [
-    "TODO"
+    "James Skinner <spiralx@gmail.com> (http://github.com/spiralx)"
   ],
   "ignore": [
     "**/.*",
@@ -21,7 +21,8 @@
   "dependencies": {
     "angular": "~1.2.14",
     "angular-route": "~1.2.14",
-    "bootstrap": "~3.3.1"
+    "bootstrap": "~3.3.1",
+    "highcharts-ng": "~0.0.7"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.14"
